@@ -20,15 +20,29 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       idNumber: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
+      },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
       },
       address: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       birthdate: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      role: {
         type: Sequelize.STRING,
         allowNull: false,
       },

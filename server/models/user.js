@@ -19,10 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notEmpty: {
-            msg: "User's first name cannot be empty",
+            msg: "First name cannot be empty",
           },
           notNull: {
-            msg: "User's first name cannot be empty",
+            msg: "First name cannot be empty",
           },
         },
       },
@@ -31,10 +31,22 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notEmpty: {
-            msg: "User's last name cannot be empty",
+            msg: "Last name cannot be empty",
           },
           notNull: {
-            msg: "User's last name cannot be empty",
+            msg: "Last name cannot be empty",
+          },
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: "Password cannot be empty",
+          },
+          notNull: {
+            msg: "Password cannot be empty",
           },
         },
       },
@@ -53,6 +65,9 @@ module.exports = (sequelize, DataTypes) => {
       idNumber: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: {
+          msg: "ID Number already registered",
+        },
         validate: {
           notEmpty: {
             msg: "ID number cannot be empty",
@@ -83,6 +98,33 @@ module.exports = (sequelize, DataTypes) => {
           },
           notNull: {
             msg: "Birthdate cannot be empty",
+          },
+        },
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: {
+          msg: "Email already registered",
+        },
+        validate: {
+          notEmpty: {
+            msg: "Email cannot be empty",
+          },
+          notNull: {
+            msg: "Email cannot be empty",
+          },
+        },
+      },
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: "User's role is required",
+          },
+          notNull: {
+            msg: "User's role is required",
           },
         },
       },
